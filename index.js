@@ -2,12 +2,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
 // Middleware for parsing JSON
 app.use(express.json());
 app.use(bodyParser.json());
+app.use(cors())
 
 app.post("/getresponce", async (req, res) => {
   try {
